@@ -2,7 +2,8 @@
 
 > Interactive, cyber-aesthetic developer portfolio showcasing data analytics pipelines, machine learning systems, relational SQL architectures, and business intelligence dashboards.
 
-[![Portfolio Live](https://img.shields.io/badge/Portfolio-Live_Demo-0a84ff?style=for-the-badge&logo=googlechrome&logoColor=white)](https://github.com/Tirthdeveloper/TIRTH_PATEL_Portfolio)
+[![Deploy to GitHub Pages](https://github.com/Tirthdeveloper/TIRTH_PATEL_Portfolio/actions/workflows/deploy.yml/badge.svg)](https://github.com/Tirthdeveloper/TIRTH_PATEL_Portfolio/actions/workflows/deploy.yml)
+[![Live Site](https://img.shields.io/badge/Live_Site-Visit_Portfolio-0a84ff?style=for-the-badge&logo=googlechrome&logoColor=white)](https://tirthdeveloper.github.io/TIRTH_PATEL_Portfolio/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-30d158?style=for-the-badge)](LICENSE)
 [![GitHub](https://img.shields.io/badge/GitHub-Tirthdeveloper-white?style=for-the-badge&logo=github)](https://github.com/Tirthdeveloper)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Patel_Tirth-0077b5?style=for-the-badge&logo=linkedin)](http://www.linkedin.com/in/patel-tirth-421b9a34a)
