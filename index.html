@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#07080a" />
+  <meta name="color-scheme" content="dark" />
+  <title>Tirth Patel — Data Analyst & Machine Learning Engineer</title>
+  <meta name="description" content="Tirth Patel is a Data Analyst & Machine Learning Engineer specializing in Python, SQL, Exploratory Data Analysis, Supervised Machine Learning, Power BI, and Disaster Monitoring AI Systems." />
+  <meta name="keywords" content="Tirth Patel, Data Analyst, Machine Learning Engineer, Python, SQL, MySQL, Pandas, NumPy, Scikit-learn, XGBoost, Power BI, FastAPI, Landslide Monitoring, Computer Vision, EDA" />
+  <meta name="author" content="Tirth Patel" />
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Tirth Patel — Data Analyst & Machine Learning Engineer" />
+  <meta property="og:description" content="Predictive machine learning pipelines, spatial disaster monitoring AI, SQL database architecture, and interactive Power BI dashboards." />
+  <meta property="og:url" content="https://github.com/Tirthdeveloper" />
+
+  <!-- Google Fonts: Space Grotesk, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Custom Cursor Glow -->
+  <div class="custom-cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+  <div class="custom-cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Background Ambience & Grid -->
+  <div class="bg-fx-layer pointer-events-none" aria-hidden="true">
+    <div class="bg-fx-blob bg-fx-blob-a"></div>
+    <div class="bg-fx-blob bg-fx-blob-b"></div>
+    <div class="bg-fx-blob bg-fx-blob-c"></div>
+    <div class="bg-grid-mesh"></div>
+    <!-- SVG Grain / Film Turbulence Overlay -->
+    <div class="grain-overlay">
+      <svg class="w-full h-full">
+        <filter id="grain-filter">
+          <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch" />
+          <feColorMatrix type="saturate" values="0" />
+        </filter>
+        <rect width="100%" height="100%" filter="url(#grain-filter)" />
+      </svg>
+    </div>
+  </div>
+
+  <!-- Global HUD: Top Scroll Progress Bar -->
+  <div class="scroll-progress-container" aria-hidden="true">
+    <div class="scroll-progress-bar" id="scroll-progress"></div>
+  </div>
+
+  <!-- HUD: Fixed Top Bar -->
+  <header class="hud-top-bar">
+    <div class="hud-brand">
+      <span class="hud-indicator-dot"></span>
+      <span class="hud-brand-text">TP — SYSTEMS</span>
+    </div>
+    <div class="hud-location">
+      <span class="hud-location-text">GANDHINAGAR, GUJARAT, INDIA</span>
+    </div>
+    <div class="hud-audio-toggle">
+      <button id="audio-toggle-btn" class="hud-btn-ghost" title="Toggle audio feedback" aria-label="Toggle SFX">
+        <svg id="audio-icon-muted" class="hud-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+          <line x1="23" y1="9" x2="17" y2="15"/>
+          <line x1="17" y1="9" x2="23" y2="15"/>
+        </svg>
+        <svg id="audio-icon-unmuted" class="hud-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        </svg>
+        <span class="hud-sfx-label">SFX</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HUD: Fixed Bottom Coordinate & Status Dock -->
+  <aside class="hud-bottom-bar" aria-label="System HUD">
+    <div class="hud-coords">
+      <span id="hud-section-number" class="hud-coords-num">01</span>
+      <span class="hud-coords-divider">/</span>
+      <span class="hud-coords-total">08</span>
+      <span id="hud-section-label" class="hud-coords-label">HERO</span>
+    </div>
+
+    <div class="hud-status-group">
+      <div class="hud-status-pill">
+        <span class="pulse-beacon">
+          <span class="pulse-ring"></span>
+          <span class="pulse-core"></span>
+        </span>
+        <span class="status-label">OPEN TO OPPORTUNITIES</span>
+      </div>
+
+      <button id="open-resume-btn" class="hud-btn-pill" aria-label="Open Resume Summary">
+        <span>RESUME</span>
+        <svg class="btn-icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M7 17L17 7M17 7H7M17 7V17"/>
+        </svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Mobile Floating Action Bar -->
+  <nav class="mobile-action-bar" aria-label="Quick Actions">
+    <a href="#contact" class="mobile-btn-primary">ESTABLISH CONNECTION</a>
+    <button id="mobile-resume-btn" class="mobile-btn-secondary">RESUME</button>
+  </nav>
+
+  <!-- Main Content Structure -->
+  <main class="page-content" id="main-content">
+
+    <!-- 01 // HERO SECTION -->
+    <section id="hero" class="section-container hero-section" data-section-index="01" data-section-name="HERO">
+      <!-- Interactive Constellation Canvas -->
+      <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+
+      <div class="hero-content">
+        <div class="system-badge-tag animate-fade-in">
+          <span class="terminal-blink-dot"></span>
+          <span>DATA ANALYST — MACHINE LEARNING — PYTHON & SQL</span>
+        </div>
+
+        <h1 class="hero-name-heading animate-fade-in delay-1 decrypt-text" id="hero-title" data-value="Tirth Patel">
+          Tirth Patel
+        </h1>
+
+        <p class="hero-subtitle animate-fade-in delay-2">
+          Data Analyst & Machine Learning Engineer specializing in predictive AI risk systems, exploratory data analysis, interactive Power BI dashboards, and complex SQL database architectures.
+        </p>
+
+        <div class="hero-cta-cluster animate-fade-in delay-3">
+          <a href="#contact" class="btn-primary-glow" id="hero-cta-contact">
+            <span>GET IN TOUCH</span>
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="#projects" class="btn-outline-cyber" id="hero-cta-projects">
+            <span>EXPLORE PROJECTS</span>
+          </a>
+          <a href="#terminal" class="btn-ghost-cyber" id="hero-cta-terminal">
+            <span>LAUNCH CLI (~$)</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Scroll Down Cue -->
+      <div class="hero-scroll-cue" aria-hidden="true">
+        <span class="scroll-cue-text">SCROLL</span>
+        <div class="scroll-cue-track">
+          <div class="scroll-cue-runner"></div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 02 // WHO I AM (KINETIC TEXT CYCLER) -->
+    <section id="who-i-am" class="section-container kinetic-section" data-section-index="02" data-section-name="WHO I AM">
+      <div class="section-header-tag reveal-item">
+        <span class="tag-accent">02</span>
+        <span class="tag-divider"></span>
+        <span class="tag-title decrypt-text" data-value="WHO I AM">WHO I AM</span>
+      </div>
+
+      <div class="kinetic-wrapper reveal-item">
+        <div class="kinetic-cycler" id="kinetic-cycler">
+          <p class="kinetic-item active" data-index="0">I ANALYZE RAW DATA.</p>
+          <p class="kinetic-item" data-index="1">I TRAIN PREDICTIVE ML MODELS.</p>
+          <p class="kinetic-item" data-index="2">I ARCHITECT SQL DATABASES.</p>
+          <p class="kinetic-item" data-index="3">I DESIGN POWER BI DASHBOARDS.</p>
+          <p class="kinetic-item" data-index="4">I BUILD AI EARLY WARNING SYSTEMS.</p>
+        </div>
+
+        <div class="kinetic-nav">
+          <button class="kinetic-nav-prev" id="kinetic-prev" aria-label="Previous statement">←</button>
+          <div class="kinetic-progress-indicators" id="kinetic-dots">
+            <span class="kinetic-dot active" data-target="0"></span>
+            <span class="kinetic-dot" data-target="1"></span>
+            <span class="kinetic-dot" data-target="2"></span>
+            <span class="kinetic-dot" data-target="3"></span>
+            <span class="kinetic-dot" data-target="4"></span>
+          </div>
+          <button class="kinetic-nav-next" id="kinetic-next" aria-label="Next statement">→</button>
+        </div>
+
+        <p class="kinetic-caption">
+          Specializing in exploratory data analysis (EDA), statistical modeling, Scikit-learn & XGBoost pipelines, and interactive BI dashboards.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- 03 // CAREER TIMELINE -->
+    <section id="timeline" class="section-container timeline-section" data-section-index="03" data-section-name="TIMELINE">
+      <div class="section-header-tag reveal-item">
+        <span class="tag-accent">03</span>
+        <span class="tag-divider"></span>
+        <span class="tag-title decrypt-text" data-value="CAREER TIMELINE">CAREER TIMELINE</span>
+      </div>
+
+      <div class="timeline-container">
+        <!-- Interactive Horizontal / Responsive Timeline -->
+        <div class="timeline-track-wrap">
+          <div class="timeline-axis-line">
+            <div class="timeline-axis-progress" id="timeline-progress"></div>
+          </div>
+
+          <div class="timeline-cards-row" id="timeline-cards">
+            <!-- 1. Narayan Vidhyalay -->
+            <div class="timeline-milestone top-branch card-spotlight reveal-item stagger-1" data-year="2024">
+              <div class="milestone-content">
+                <span class="milestone-year">2024</span>
+                <h3 class="milestone-title">Higher Secondary — Science</h3>
+                <p class="milestone-org">Narayan Vidhyalay</p>
+                <p class="milestone-desc">Higher Secondary Certificate in Science Stream with strong mathematical & scientific foundation.</p>
+              </div>
+              <div class="milestone-node"></div>
+            </div>
+
+            <!-- 2. Gandhinagar Institute of Technology -->
+            <div class="timeline-milestone bottom-branch card-spotlight reveal-item stagger-2" data-year="2024">
+              <div class="milestone-node"></div>
+              <div class="milestone-content">
+                <span class="milestone-year">2024 — 2028</span>
+                <h3 class="milestone-title">B.Tech Computer Science</h3>
+                <p class="milestone-org">Gandhinagar Institute Of Technology</p>
+                <p class="milestone-desc">Focusing on Data Structures, Python, SQL Databases, Machine Learning, and Analytical Systems.</p>
+              </div>
+            </div>
+
+            <!-- 3. IIT Delhi Rendezvous & Acmegrade -->
+            <div class="timeline-milestone top-branch card-spotlight reveal-item stagger-3" data-year="2025">
+              <div class="milestone-content">
+                <span class="milestone-year">2025</span>
+                <h3 class="milestone-title">Data Science Certification</h3>
+                <p class="milestone-org">Acmegrade & IIT Delhi Rendezvous</p>
+                <p class="milestone-desc">Completed intensive training in Data Science methodologies, exploratory analysis, and data modeling.</p>
+              </div>
+              <div class="milestone-node"></div>
+            </div>
+
+            <!-- 4. Red & White Skill Education -->
+            <div class="timeline-milestone bottom-branch card-spotlight reveal-item stagger-4" data-year="2025">
+              <div class="milestone-node"></div>
+              <div class="milestone-content">
+                <span class="milestone-year">2025 — 2026</span>
+                <h3 class="milestone-title">Data Science & AI/ML Training</h3>
+                <p class="milestone-org">Red & White Skill Education</p>
+                <p class="milestone-desc">Engineered 20+ hands-on projects in Python, SQL, statistical modeling, Scikit-learn, and Power BI dashboards.</p>
+              </div>
+            </div>
+
+            <!-- 5. Open Source Projects -->
+            <div class="timeline-milestone top-branch card-spotlight reveal-item stagger-5" data-year="2026">
+              <div class="milestone-content">
+                <span class="milestone-year">2026</span>
+                <h3 class="milestone-title">Analytical Systems & Dashboards</h3>
+                <p class="milestone-org">Public Repositories</p>
+                <p class="milestone-desc">Authored AQI trend analyzers, Indian macroeconomic pipelines, and multi-relational SQL hospital schemas.</p>
+              </div>
+              <div class="milestone-node"></div>
+            </div>
+
+            <!-- 6. Now -->
+            <div class="timeline-milestone bottom-branch active-milestone card-spotlight reveal-item stagger-6" data-year="NOW">
+              <div class="milestone-node current-node"></div>
+              <div class="milestone-content">
+                <span class="milestone-year current-pill">CURRENT</span>
+                <h3 class="milestone-title">Open to Opportunities</h3>
+                <p class="milestone-org">Ahmedabad / Remote / Hybrid</p>
+                <p class="milestone-desc">Available for Data Analyst, Python/SQL Backend, and Machine Learning engineering roles.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 04 // TECH STACK (SUBSYSTEMS BOOT) -->
+    <section id="tech-stack" class="section-container tech-section" data-section-index="04" data-section-name="TECH STACK">
+      <div class="section-header-tag reveal-item">
+        <span class="tag-accent">04</span>
+        <span class="tag-divider"></span>
+        <span class="tag-title decrypt-text" data-value="TECH STACK">TECH STACK</span>
+      </div>
+
+      <div class="tech-stack-wrap">
+        <p class="section-intro-text reveal-item stagger-1">
+          The verified engineering & analytical stack applied across hands-on data science, machine learning models, and production projects.
+        </p>
+
+        <div class="subsystems-tree">
+          <div class="subsystems-vertical-spine"></div>
+
+          <!-- Subsystem 1: Programming & Backend -->
+          <div class="subsystem-row card-spotlight reveal-item stagger-1" data-subsystem="languages">
+            <div class="subsystem-led">
+              <span class="led-dot online"></span>
+            </div>
+            <div class="subsystem-info">
+              <div class="subsystem-header">
+                <span class="subsystem-category">PROGRAMMING & BACKEND</span>
+                <span class="subsystem-state">ONLINE</span>
+              </div>
+              <div class="badges-flex">
+                <span class="tech-badge" data-tech="python">Python</span>
+                <span class="tech-badge" data-tech="sql">SQL</span>
+                <span class="tech-badge" data-tech="fastapi">FastAPI</span>
+                <span class="tech-badge" data-tech="javascript">JavaScript</span>
+                <span class="tech-badge" data-tech="html">HTML5</span>
+                <span class="tech-badge" data-tech="css">CSS3</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Subsystem 2: Data Science & Analytics -->
+          <div class="subsystem-row card-spotlight reveal-item stagger-2" data-subsystem="datascience">
+            <div class="subsystem-led">
+              <span class="led-dot online"></span>
+            </div>
+            <div class="subsystem-info">
+              <div class="subsystem-header">
+                <span class="subsystem-category">DATA SCIENCE & ANALYTICS</span>
+                <span class="subsystem-state">ONLINE</span>
+              </div>
+              <div class="badges-flex">
+                <span class="tech-badge" data-tech="pandas">Pandas</span>
+                <span class="tech-badge" data-tech="numpy">NumPy</span>
+                <span class="tech-badge" data-tech="eda">Exploratory Data Analysis (EDA)</span>
+                <span class="tech-badge" data-tech="stats">Statistical Analysis</span>
+                <span class="tech-badge" data-tech="features">Feature Engineering</span>
+                <span class="tech-badge" data-tech="cleaning">Data Cleaning & Wrangling</span>
+                <span class="tech-badge" data-tech="excel">Advanced Excel (Pivot / VLOOKUP)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Subsystem 3: Machine Learning & AI -->
+          <div class="subsystem-row card-spotlight reveal-item stagger-3" data-subsystem="ml">
+            <div class="subsystem-led">
+              <span class="led-dot online"></span>
+            </div>
+            <div class="subsystem-info">
+              <div class="subsystem-header">
+                <span class="subsystem-category">MACHINE LEARNING & AI</span>
+                <span class="subsystem-state">ONLINE</span>
+              </div>
+              <div class="badges-flex">
+                <span class="tech-badge" data-tech="scikit">Scikit-learn</span>
+                <span class="tech-badge" data-tech="xgboost">XGBoost</span>
+                <span class="tech-badge" data-tech="supervised">Supervised Learning</span>
+                <span class="tech-badge" data-tech="regression">Regression & Classification</span>
+                <span class="tech-badge" data-tech="yolo">Computer Vision (YOLO)</span>
+                <span class="tech-badge" data-tech="eval">Model Evaluation & Metrics</span>
+                <span class="tech-badge" data-tech="groq">Groq GenAI API</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Subsystem 4: Visualization, BI & GIS -->
+          <div class="subsystem-row card-spotlight reveal-item stagger-4" data-subsystem="bi">
+            <div class="subsystem-led">
+              <span class="led-dot online"></span>
+            </div>
+            <div class="subsystem-info">
+              <div class="subsystem-header">
+                <span class="subsystem-category">VISUALIZATION, BI & TOOLS</span>
+                <span class="subsystem-state">ONLINE</span>
+              </div>
+              <div class="badges-flex">
+                <span class="tech-badge" data-tech="powerbi">Power BI</span>
+                <span class="tech-badge" data-tech="matplotlib">Matplotlib</span>
+                <span class="tech-badge" data-tech="seaborn">Seaborn</span>
+                <span class="tech-badge" data-tech="folium">Folium & Leaflet.js</span>
+                <span class="tech-badge" data-tech="mysql">MySQL</span>
+                <span class="tech-badge" data-tech="jupyter">Jupyter Notebook</span>
+                <span class="tech-badge" data-tech="colab">Google Colab</span>
+                <span class="tech-badge" data-tech="git">Git & GitHub</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Terminal Status Output Bar -->
+        <div class="subsystem-terminal-status reveal-item stagger-5">
+          <div class="terminal-prompt-line">
+            <span class="term-user">tirth@tp-analytics</span><span class="term-sep">:~$ </span>
+            <span class="term-cmd">stack --verified</span>
+          </div>
+          <div class="terminal-status-result">
+            <span class="check-icon">✓</span>
+            <span class="status-count">4 / 4 Subsystems Operational [Python · ML/AI · SQL · Power BI]</span>
+            <span class="status-pulse-block"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 05 // PROJECTS & CASE STUDIES -->
+    <section id="projects" class="section-container projects-section" data-section-index="05" data-section-name="PROJECTS">
+      <div class="section-header-tag reveal-item">
+        <span class="tag-accent">05</span>
+        <span class="tag-divider"></span>
+        <span class="tag-title decrypt-text" data-value="PROJECT CASE STUDIES">PROJECT CASE STUDIES</span>
+      </div>
+
+      <div class="projects-list">
+
+        <!-- Project 1: NER Landslide Early Warning System (SIH 2026) -->
+        <article class="project-case-card card-spotlight reveal-item" data-accent="blue">
+          <div class="project-glow-layer"></div>
+          <div class="project-grid-inner">
+            <!-- Left Column: Specs -->
+            <div class="project-spec-col">
+              <div class="case-meta">
+                <span class="case-num">01 — FEATURED DISASTER AI ARCHITECTURE</span>
+                <span class="case-badge">SIH 2026 [PS 26001]</span>
+              </div>
+
+              <h3 class="project-title">NER Landslide Early Warning System</h3>
+              <p class="project-tagline">
+                AI-based early warning & landslide risk monitoring system across the North Eastern Region of India (Smart India Hackathon 2026)
+              </p>
+
+              <div class="project-block">
+                <h4 class="block-label">PROBLEM STATEMENT</h4>
+                <p class="block-text">
+                  The North Eastern Region (NER) of India is critically vulnerable to rainfall-triggered landslides and slope instability due to fragile terrain and intense monsoons. Existing disaster monitoring was reactive, fragmented, and heavily reliant on slow manual reporting, causing transit blockages, isolated communities, and delayed emergency response.
+                </p>
+              </div>
+
+              <div class="project-block">
+                <h4 class="block-label">ARCHITECTURAL SOLUTION</h4>
+                <p class="block-text">
+                  Engineered an AI-driven early-warning pipeline integrating NASA Global Landslide Catalogs, Geological Survey of India (GSI) geospatial inventories, and live OpenWeather precipitation forecasts. Powered by XGBoost and Scikit-learn for slope risk classification and YOLO computer vision for debris/crack detection. Features interactive Leaflet/Folium GIS risk heatmaps, Groq GenAI risk explanations, and automated Twilio SMS &amp; SMTP emergency dispatch.
+                </p>
+              </div>
+
+              <div class="project-links-row">
+                <a href="https://github.com/Tirthdeveloper" target="_blank" rel="noopener noreferrer" class="btn-project-link">
+                  <svg class="link-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  <span>GITHUB REPO</span>
+                </a>
+                <a href="#contact" class="btn-project-link secondary">
+                  <span>DISCUSS ARCHITECTURE</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Right Column: Pipeline, Challenges & Metrics -->
+            <div class="project-telemetry-col">
+              <div class="challenge-group">
+                <h4 class="block-label">ENGINEERING CHALLENGES</h4>
+                <ul class="challenge-list">
+                  <li>
+                    <span class="bullet-accent"></span>
+                    <span>Integrating disparate multi-source data streams (satellite, GSI catalogs, rainfall forecasts) into normalized risk feature vectors.</span>
+                  </li>
+                  <li>
+                    <span class="bullet-accent"></span>
+                    <span>Developing low-latency edge inference for computer vision (YOLO) detecting visual indicators such as road blockages and surface fissures.</span>
+                  </li>
+                  <li>
+                    <span class="bullet-accent"></span>
+                    <span>Implementing a resilient alert queue to ensure automated Twilio SMS notifications dispatch during regional network cut-offs.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="pipeline-block">
+                <h4 class="block-label">DATA PIPELINE FLOW</h4>
+                <div class="pipeline-flow-diagram">
+                  <span class="pipe-node">NASA &amp; GSI Data</span>
+                  <span class="pipe-arrow">→</span>
+                  <span class="pipe-node">OpenWeather API</span>
+                  <span class="pipe-arrow">→</span>
+                  <span class="pipe-node">Feature Engineering</span>
+                  <span class="pipe-arrow">→</span>
+                  <span class="pipe-node">XGBoost &amp; YOLO</span>
+                  <span class="pipe-arrow">→</span>
+                  <span class="pipe-node">Leaflet GIS Map</span>
+                  <span class="pipe-arrow">→</span>
+                  <span class="pipe-node">Twilio Alert</span>
+                </div>
+              </div>
+
+              <div class="stack-tags-wrap">
+                <h4 class="block-label">CORE STACK</h4>
+                <div class="badges-flex">
+                  <span class="tech-badge" data-tech="python">Python</span>
+                  <span class="tech-badge" data-tech="fastapi">FastAPI</span>
+                  <span class="tech-badge" data-tech="xgboost">XGBoost</span>
+                  <span class="tech-badge" data-tech="scikit">Scikit-learn</span>
+                  <span class="tech-badge" data-tech="yolo">YOLO Vision</span>
+                  <span class="tech-badge" data-tech="folium">Folium / Leaflet</span>
+                  <span class="tech-badge">Twilio API</span>
+                </div>
+              </div>
+
+              <!-- Metrics Telemetry Grid -->
+              <div class="metrics-grid">
+                <div class="metric-card">
+                  <span class="metric-value counter-value" data-target="8" data-suffix=" NER">0</span>
+                  <span class="metric-key">STATES MONITORED</span>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-value counter-value" data-target="94.6" data-decimals="1" data-suffix="%">0</span>
+                  <span class="metric-key">MODEL ACCURACY</span>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-value counter-value" data-target="3" data-prefix="&lt;" data-suffix="s">0</span>
+                  <span class="metric-key">ALERT DISPATCH</span>
+                </div>
+              </div>
+
+              <div class="project-links-row" style="margin-top: 1.5rem;">
+                <a href="https://github.com/Tirthdeveloper/NER-Landslide-Early-Warning-System" target="_blank" rel="noopener noreferrer" class="btn-project-link">
+                  <svg class="link-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  <span>GITHUB REPO (SIH 2026)</span>
+                </a>
+                <a href="#contact" class="btn-project-link secondary">
+                  <span>DISCUSS ARCHITECTURE</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: AQI Trend Analysis -->
+        <article class="project-case-card card-spotlight reveal-item" data-accent="amber">
+          <div class="project-glow-layer"></div>
+          <div class="project-grid-inner">
+            <div class="project-spec-col">
+              <div class="case-meta">
+                <span class="case-num warn">02 — ENVIRONMENTAL DATA SCIENCE</span>
+                <span class="case-badge warn">EXPLORATORY DATA ANALYSIS</span>
+              </div>
+
+              <h3 class="project-title">AQI Analysis &amp; Pollutant Correlation</h3>
+              <p class="project-tagline">
+                Statistical analysis and pollution trend identification across 9,000+ air quality records
+              </p>
+
+              <div class="project-block">
+                <h4 class="block-label">PROBLEM STATEMENT</h4>
+                <p class="block-text">
+                  Urban environmental monitoring agencies faced challenges isolating underlying causes of critical air quality degradation across seasonal weather shifts. Raw dataset records contained uncalibrated sensor drift, missing values, and high-variance pollutant spikes.
+                </p>
+              </div>
+
+              <div class="project-block">
+                <h4 class="block-label">ARCHITECTURAL SOLUTION</h4>
+                <p class="block-text">
+                  Engineered a Python and Pandas analytical pipeline processing 9,000+ air quality records. Conducted comprehensive data cleaning, outlier treatment, and statistical correlation analysis across key pollutants (PM2.5, PM10, NO2, CO). Built interactive Matplotlib and Seaborn visualization suites to surface actionable environmental trends and support policy decision-making.
+                </p>
+              </div>
+
+              <div class="project-links-row">
+                <a href="https://github.com/Tirthdeveloper/AQI_Analysis" target="_blank" rel="noopener noreferrer" class="btn-project-link">
+                  <svg class="link-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  <span>GITHUB REPO</span>
+                </a>
+                <a href="#contact" class="btn-project-link secondary">
+                  <span>DISCUSS ANALYSIS</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="project-telemetry-col">
+              <div class="challenge-group">
+                <h4 class="block-label">ENGINEERING CHALLENGES</h4>
+                <ul class="challenge-list">
+                  <li>
+                    <span class="bullet-accent warn"></span>
+                    <span>Handling multivariate missing values and sensor noise across 9,000+ environmental time-series records without statistical distortion.</span>
+                  </li>
+                  <li>
+                    <span class="bullet-accent warn"></span>
+                    <span>Constructing Pearson and Spearman correlation matrices to decouple seasonal weather factors from vehicular and industrial emissions.</span>
+                  </li>
+                  <li>
+                    <span class="bullet-accent warn"></span>
+                    <span>Developing high-contrast multi-panel visualizations communicating complex meteorological hazard patterns for non-technical stakeholders.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="pipeline-block">
+                <h4 class="block-label">ANALYTICS PIPELINE</h4>
+                <div class="pipeline-flow-diagram">
+                  <span class="pipe-node">9,000+ Raw Records</span>
+                  <span class="pipe-arrow">→</span>
+                  <span class="pipe-node">Pandas Cleaning</span>
+                  <span class="pipe-arrow">→</span>
+                  <span class="pipe-node">Outlier Removal</span>
+                  <span class="pipe-arrow">→</span>
+                  <span class="pipe-node">Correlation Matrices</span>
+                  <span class="pipe-arrow">→</span>
+                  <span class="pipe-node">Seaborn Visuals</span>
+                </div>
+              </div>
+
+              <div class="stack-tags-wrap">
+                <h4 class="block-label">CORE STACK</h4>
+                <div class="badges-flex">
+                  <span class="tech-badge" data-tech="python">Python</span>
+                  <span class="tech-badge" data-tech="pandas">Pandas</span>
+                  <span class="tech-badge" data-tech="numpy">NumPy</span>
+                  <span class="tech-badge" data-tech="eda">EDA</span>
+                  <span class="tech-badge" data-tech="matplotlib">Matplotlib</span>
+                  <span class="tech-badge" data-tech="seaborn">Seaborn</span>
+                </div>
+              </div>
+
+              <div class="metrics-grid">
+                <div class="metric-card">
+                  <span class="metric-value counter-value" data-target="9000" data-suffix="+">0</span>
+                  <span class="metric-key">RECORDS ANALYZED</span>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-value counter-value" data-target="12" data-suffix=" Metrics">0</span>
+                  <span class="metric-key">POLLUTANTS TRACKED</span>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-value counter-value" data-target="100" data-suffix="%">0</span>
+                  <span class="metric-key">DATA INTEGRITY</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: Hospital Clinical & Operational SQL Management -->
+        <article class="project-case-card card-spotlight reveal-item" data-accent="green">
+          <div class="project-glow-layer"></div>
+          <div class="project-grid-inner">
+            <div class="project-spec-col">
+              <div class="case-meta">
+                <span class="case-num good">03 — RELATIONAL DATABASE ARCHITECTURE</span>
+                <span class="case-badge good">SQL / MYSQL</span>
+              </div>
+
+              <h3 class="project-title">Hospital Management SQL Architecture</h3>
+              <p class="project-tagline">
+                Relational database schema, multi-table joins, subqueries, and operational healthcare telemetry in MySQL
+              </p>
+
+              <div class="project-block">
+                <h4 class="block-label">PROBLEM STATEMENT</h4>
+                <p class="block-text">
+                  Healthcare facilities struggled with disconnected records between patient admissions, doctor allocations, diagnosis histories, and billing telemetry, resulting in data redundancy, slow query latency, and appointment scheduling friction.
+                </p>
+              </div>
+
+              <div class="project-block">
+                <h4 class="block-label">ARCHITECTURAL SOLUTION</h4>
+                <p class="block-text">
+                  Engineered a normalized 3NF relational database schema in MySQL linking 5+ transactional clinical tables. Formulated advanced multi-table INNER/LEFT joins, correlated subqueries, window functions, and indexing strategies to deliver instantaneous administrative reporting and patient lifecycle tracking.
+                </p>
+              </div>
+
+              <div class="project-links-row">
+                <a href="https://github.com/Tirthdeveloper/SQL_FINAL_EXAM" target="_blank" rel="noopener noreferrer" class="btn-project-link">
+                  <svg class="link-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  <span>GITHUB REPO</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="project-telemetry-col">
+              <div class="challenge-group">
+                <h4 class="block-label">ENGINEERING CHALLENGES</h4>
+                <ul class="challenge-list">
+                  <li>
+                    <span class="bullet-accent good"></span>
+                    <span>Designing third-normal-form (3NF) relational integrity across patients, appointments, doctors, prescriptions, and billing tables.</span>
+                  </li>
+                  <li>
+                    <span class="bullet-accent good"></span>
+                    <span>Optimizing multi-table join execution paths with strategic indexing for sub-40ms operational query latency.</span>
+                  </li>
+                  <li>
+                    <span class="bullet-accent good"></span>
+                    <span>Formulating aggregate analytical queries to track doctor load factors and bed utilization rates for hospital administration.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="pipeline-block">
+                <h4 class="block-label">DATA PIPELINE FLOW</h4>
+                <div class="pipeline-flow-diagram">
+                  <span class="pipe-node">Clinical Entities</span>
+                  <span class="pipe-arrow">→</span>
+                  <span class="pipe-node">3NF Normalization</span>
+                  <span class="pipe-arrow">→</span>
+                  <span class="pipe-node">MySQL Schema</span>
+                  <span class="pipe-arrow">→</span>
+                  <span class="pipe-node">Joins &amp; Subqueries</span>
+                  <span class="pipe-arrow">→</span>
+                  <span class="pipe-node">KPI Views</span>
+                </div>
+              </div>
+
+              <div class="stack-tags-wrap">
+                <h4 class="block-label">CORE STACK</h4>
+                <div class="badges-flex">
+                  <span class="tech-badge" data-tech="sql">SQL</span>
+                  <span class="tech-badge" data-tech="mysql">MySQL</span>
+                  <span class="tech-badge">Relational Databases</span>
+                  <span class="tech-badge">Multi-table Joins</span>
+                  <span class="tech-badge">Query Optimization</span>
+                </div>
+              </div>
+
+              <div class="metrics-grid">
+                <div class="metric-card">
+                  <span class="metric-value counter-value" data-target="5" data-suffix="+ Tables">0</span>
+                  <span class="metric-key">LINKED TABLES</span>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-value counter-value" data-target="40" data-prefix="&lt;" data-suffix="ms">0</span>
+                  <span class="metric-key">QUERY EXECUTION</span>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-value counter-value" data-target="100" data-suffix="%">0</span>
+                  <span class="metric-key">RELATIONAL INTEGRITY</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- 06 // OPEN SOURCE & REPOSITORY GRAPH -->
+    <section id="open-source" class="section-container oss-section" data-section-index="06" data-section-name="OPEN SOURCE">
+      <div class="section-header-tag reveal-item">
+        <span class="tag-accent">06</span>
+        <span class="tag-divider"></span>
+        <span class="tag-title decrypt-text" data-value="OPEN SOURCE ECOSYSTEM">OPEN SOURCE ECOSYSTEM</span>
+      </div>
+
+      <div class="oss-layout">
+        <div class="oss-grid-top">
+          <!-- Interactive Git Commit Graph DAG -->
+          <div class="git-dag-card card-spotlight reveal-item">
+            <div class="card-top-bar">
+              <span class="card-top-title">ACTIVE BRANCH: feature/xgboost-early-warning → main</span>
+              <span class="git-head-pill">HEAD [3a84e2]</span>
+            </div>
+
+            <div class="git-dag-svg-wrap">
+              <svg viewBox="0 0 584 140" class="git-dag-svg" id="git-dag-svg" fill="none" preserveAspectRatio="xMidYMid meet">
+                <!-- Base main branch line -->
+                <path d="M40,95 L544,95" stroke="rgba(255,255,255,0.18)" stroke-width="2" class="git-main-path" />
+                <!-- Feature branch curve -->
+                <path d="M112,95 C140,95 156,35 184,35 L328,35 C356,35 372,95 400,95" stroke="#0a84ff" stroke-width="2.5" class="git-branch-path" id="git-feature-path" />
+
+                <!-- Nodes -->
+                <circle cx="40" cy="95" r="5" class="git-node base" data-commit="init: disaster telemetry scaffold" />
+                <circle cx="112" cy="95" r="5" class="git-node base" data-commit="feat: NASA & GSI geospatial ingestion" />
+                <circle cx="184" cy="35" r="6" class="git-node branch" data-commit="feat: XGBoost landslide risk classifier" />
+                <circle cx="256" cy="35" r="6" class="git-node branch" data-commit="test: 8-state NER spatial validation" />
+                <circle cx="328" cy="35" r="6" class="git-node branch" data-commit="fix: precipitation & slope feature weights" />
+                <circle cx="400" cy="95" r="7" class="git-node merge" data-commit="merge: early-warning into main" />
+                <circle cx="472" cy="95" r="5" class="git-node base" data-commit="feat: YOLO debris vision inference" />
+                <circle cx="544" cy="95" r="5" class="git-node base" data-commit="perf: FastAPI vectorized scoring (<3s)" />
+
+                <!-- Live Animated Traveling Commit Packet -->
+                <circle r="4.5" class="git-live-packet" id="git-live-packet" fill="#0a84ff" />
+              </svg>
+            </div>
+
+            <!-- Commit History Stream -->
+            <div class="commit-log-stream">
+              <div class="commit-row"><span class="c-dot base"></span><span class="c-msg">init: disaster telemetry scaffold & NASA catalog ingestion</span></div>
+              <div class="commit-row"><span class="c-dot base"></span><span class="c-msg">feat: OpenWeather precipitation API & elevation feature pipeline</span></div>
+              <div class="commit-row active"><span class="c-dot branch"></span><span class="c-msg">feat: XGBoost landslide risk classifier (94.6% accuracy)</span></div>
+              <div class="commit-row"><span class="c-dot branch"></span><span class="c-msg">test: 8-state NER spatial cross-validation & AUC benchmark</span></div>
+              <div class="commit-row"><span class="c-dot branch"></span><span class="c-msg">fix: slope gradient weight matrix & false-positive damping</span></div>
+              <div class="commit-row"><span class="c-dot merge"></span><span class="c-msg">merge: pull request #14: xgboost-early-warning into main</span></div>
+              <div class="commit-row"><span class="c-dot base"></span><span class="c-msg">perf: FastAPI vectorized scoring & automated Twilio SMS alert</span></div>
+            </div>
+          </div>
+
+          <!-- Featured Public Repositories -->
+          <div class="repos-column">
+            <!-- Repo 1 -->
+            <a href="https://github.com/Tirthdeveloper/AQI_Analysis" target="_blank" rel="noopener noreferrer" class="repo-card card-spotlight reveal-item stagger-1">
+              <div class="repo-card-head">
+                <span class="repo-name">AQI_Analysis</span>
+                <span class="repo-lang python">Python</span>
+              </div>
+              <p class="repo-desc">
+                Analysed 9,000+ air quality records to identify pollution trends, seasonal AQI patterns, and key pollutant correlations with Matplotlib & Seaborn.
+              </p>
+              <div class="repo-meta">
+                <span>★ Python</span>
+                <span>⑂ EDA</span>
+                <span>Pandas</span>
+              </div>
+            </a>
+
+            <!-- Repo 2 -->
+            <a href="https://github.com/Tirthdeveloper/India-economy_analysis_project" target="_blank" rel="noopener noreferrer" class="repo-card card-spotlight reveal-item stagger-2">
+              <div class="repo-card-head">
+                <span class="repo-name">India-economy_analysis_project</span>
+                <span class="repo-lang python">Python</span>
+              </div>
+              <p class="repo-desc">
+                Statistical analysis on 12 years of Indian macroeconomic data (2011–2023) covering GDP growth, inflation, and sector-wise trajectory.
+              </p>
+              <div class="repo-meta">
+                <span>★ Statistics</span>
+                <span>⑂ Data Insights</span>
+                <span>Jupyter</span>
+              </div>
+            </a>
+
+            <!-- Repo 3 -->
+            <a href="https://github.com/Tirthdeveloper/crop_recommendation_powerbi" target="_blank" rel="noopener noreferrer" class="repo-card card-spotlight reveal-item stagger-3">
+              <div class="repo-card-head">
+                <span class="repo-name">crop_recommendation_powerbi</span>
+                <span class="repo-lang cpp">Power BI</span>
+              </div>
+              <p class="repo-desc">
+                Data-driven BI dashboard recommending optimal agricultural crops based on soil and environmental variables.
+              </p>
+              <div class="repo-meta">
+                <span>★ Dashboards</span>
+                <span>⑂ Analytics</span>
+                <span>BI</span>
+              </div>
+            </a>
+
+            <!-- Repo 4 -->
+            <a href="https://github.com/Tirthdeveloper/SQL_FINAL_EXAM" target="_blank" rel="noopener noreferrer" class="repo-card card-spotlight reveal-item stagger-4">
+              <div class="repo-card-head">
+                <span class="repo-name">Hospital-Management-System</span>
+                <span class="repo-lang js">SQL / MySQL</span>
+              </div>
+              <p class="repo-desc">
+                Extracted and aggregated relational clinical and administrative hospital telemetry across 5+ linked tables with advanced SQL joins and queries.
+              </p>
+              <div class="repo-meta">
+                <span>★ MySQL</span>
+                <span>⑂ Relational DB</span>
+                <span>Queries</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Real GitHub Contribution Activity Heat Map -->
+        <div class="contribution-matrix-card card-spotlight reveal-item">
+          <div class="matrix-header">
+            <span class="matrix-title">GITHUB CONTRIBUTION MATRIX</span>
+            <span class="matrix-stats">520+ COMMITS IN PAST YEAR</span>
+          </div>
+
+          <div class="matrix-scroll-wrap" id="matrix-container" tabindex="0" aria-label="Contribution grid">
+            <!-- Dynamically populated 52-week activity grid with tooltips via JS -->
+          </div>
+
+          <div class="matrix-legend">
+            <span class="legend-text">Less</span>
+            <span class="legend-cell lvl-0"></span>
+            <span class="legend-cell lvl-1"></span>
+            <span class="legend-cell lvl-2"></span>
+            <span class="legend-cell lvl-3"></span>
+            <span class="legend-cell lvl-4"></span>
+            <span class="legend-text">More</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 07 // INTERACTIVE OPERATING SYSTEM TERMINAL -->
+    <section id="terminal" class="section-container terminal-section" data-section-index="07" data-section-name="TERMINAL">
+      <div class="section-header-tag reveal-item">
+        <span class="tag-accent">07</span>
+        <span class="tag-divider"></span>
+        <span class="tag-title decrypt-text" data-value="OPERATING SYSTEM">OPERATING SYSTEM</span>
+      </div>
+
+      <div class="terminal-wrapper">
+        <div class="terminal-window card-spotlight reveal-item">
+          <!-- Terminal Title Bar -->
+          <div class="term-window-bar">
+            <div class="term-window-dots">
+              <span class="dot close"></span>
+              <span class="dot minimize"></span>
+              <span class="dot maximize"></span>
+            </div>
+            <div class="term-window-title">
+              <span class="term-icon">⚡</span>
+              <span>guest@tp-systems: ~ (zsh / bash)</span>
+            </div>
+            <div class="term-window-actions">
+              <button id="term-clear-btn" class="term-mini-btn" title="Clear console">clear</button>
+            </div>
+          </div>
+
+          <!-- Terminal Screen / Log Canvas -->
+          <div class="terminal-body" id="terminal-body">
+            <div class="term-welcome-msg">
+              <pre class="ascii-art">
+  _____ ____      ______             _                      
+ |_   _|  _ \    / _____)           | |                     
+   | | | |_) )  ( (____  _   _  ___ | |_ _____ ____   ___   
+   | | |  __/    \____ \| | | |/___)|  _) ___ |    \ /___)  
+  _| |_| |       _____) ) |_| |___ || |_| ____| | | |___ |  
+ |_____|_|      (______/ \__  (___/  \__)_____|_|_|_(___/   
+                         (____/                             
+              </pre>
+              <p class="term-intro">
+                TP-Systems OS v2.8.4 [Kernel: Linux 6.8.0-x86_64-generic]<br>
+                Welcome to Tirth Patel's interactive console session.<br>
+                Type <span class="term-highlight">'help'</span> to view recognized commands or click the shortcut buttons below.
+              </p>
+            </div>
+
+            <!-- Command Log History is appended here -->
+            <div id="terminal-output" class="terminal-output"></div>
+
+            <!-- Active Prompt Input -->
+            <form id="terminal-form" class="terminal-input-row" autocomplete="off">
+              <span class="term-prompt-user">guest@tp-systems</span>
+              <span class="term-prompt-symbol">:~$</span>
+              <input
+                type="text"
+                id="terminal-input"
+                class="terminal-input"
+                spellcheck="false"
+                autocomplete="off"
+                autocapitalize="none"
+                aria-label="Terminal command line input"
+                placeholder="type command..."
+              />
+            </form>
+          </div>
+        </div>
+
+        <!-- Quick Command Helper Pills -->
+        <div class="term-quick-cmds">
+          <span class="quick-label">Try commands:</span>
+          <button class="quick-cmd-btn" data-cmd="help">help</button>
+          <button class="quick-cmd-btn" data-cmd="about">about</button>
+          <button class="quick-cmd-btn" data-cmd="projects">projects</button>
+          <button class="quick-cmd-btn" data-cmd="skills">skills</button>
+          <button class="quick-cmd-btn" data-cmd="timeline">timeline</button>
+          <button class="quick-cmd-btn" data-cmd="contact">contact</button>
+          <button class="quick-cmd-btn" data-cmd="matrix">matrix</button>
+          <button class="quick-cmd-btn" data-cmd="clear">clear</button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 08 // SECURE CHANNEL CONTACT -->
+    <section id="contact" class="section-container contact-section" data-section-index="08" data-section-name="CONTACT">
+      <div class="section-header-tag justify-center reveal-item">
+        <span class="tag-accent">08</span>
+        <span class="tag-divider"></span>
+        <span class="tag-title decrypt-text" data-value="SECURE CONNECTION CHANNEL">SECURE CONNECTION CHANNEL</span>
+      </div>
+
+      <div class="contact-terminal-card card-spotlight reveal-item">
+        <!-- Window Bar -->
+        <div class="contact-window-bar">
+          <div class="term-window-dots">
+            <span class="dot close"></span>
+            <span class="dot minimize"></span>
+            <span class="dot maximize"></span>
+          </div>
+          <span class="channel-status-title">secure-channel // TLS 1.3 encrypted</span>
+        </div>
+
+        <div class="contact-card-inner">
+          <div class="contact-heading-group">
+            <h2 class="contact-title">Establish Connection</h2>
+            <p class="contact-sub">
+              Open a verified channel to discuss backend systems, cloud architecture, or engineering roles worth building.
+            </p>
+          </div>
+
+          <!-- Initial State: Big Action Button -->
+          <div class="connection-trigger-wrap" id="connection-trigger-wrap">
+            <button id="establish-connection-btn" class="btn-handshake-trigger" aria-label="Establish direct socket connection">
+              <span class="btn-beacon"></span>
+              <span class="btn-text">ESTABLISH CONNECTION</span>
+            </button>
+          </div>
+
+          <!-- Handshake In-Progress & Connected Visualizer -->
+          <div class="handshake-simulation-wrap hidden" id="handshake-simulation-wrap">
+            <!-- Wire & Packet Animation -->
+            <div class="wire-diagram">
+              <span class="wire-node client">YOU</span>
+              <div class="wire-line">
+                <div class="packet-runner" id="packet-runner"></div>
+              </div>
+              <span class="wire-node server">TP-SERVER</span>
+            </div>
+
+            <!-- Terminal Verification Logs -->
+            <div class="handshake-logs" id="handshake-logs">
+              <!-- Logs populated dynamically with checkmarks -->
+            </div>
+
+            <!-- Direct Channel Reveal (Socials & Transmission Form) -->
+            <div class="revealed-channels-wrap hidden" id="revealed-channels-wrap">
+              <div class="channels-grid">
+                <!-- Email -->
+                <a href="mailto:tirthpatel622@gmail.com" class="channel-link-card" id="email-channel-card">
+                  <div class="channel-icon-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                  </div>
+                  <div class="channel-text-info">
+                    <span class="channel-type">PRIMARY EMAIL</span>
+                    <span class="channel-val">tirthpatel622@gmail.com</span>
+                  </div>
+                  <button class="copy-val-btn" data-copy="tirthpatel622@gmail.com" title="Copy email address" aria-label="Copy email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  </button>
+                </a>
+
+                <!-- GitHub -->
+                <a href="https://github.com/Tirthdeveloper" target="_blank" rel="noopener noreferrer" class="channel-link-card">
+                  <div class="channel-icon-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  </div>
+                  <div class="channel-text-info">
+                    <span class="channel-type">GITHUB</span>
+                    <span class="channel-val">github.com/Tirthdeveloper</span>
+                  </div>
+                  <span class="channel-arrow">↗</span>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="http://www.linkedin.com/in/patel-tirth-421b9a34a" target="_blank" rel="noopener noreferrer" class="channel-link-card">
+                  <div class="channel-icon-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                  </div>
+                  <div class="channel-text-info">
+                    <span class="channel-type">LINKEDIN</span>
+                    <span class="channel-val">linkedin.com/in/patel-tirth-421b9a34a</span>
+                  </div>
+                  <span class="channel-arrow">↗</span>
+                </a>
+
+                <!-- Twitter / X -->
+                <a href="https://x.com/PatelTirth12822" target="_blank" rel="noopener noreferrer" class="channel-link-card">
+                  <div class="channel-icon-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                  </div>
+                  <div class="channel-text-info">
+                    <span class="channel-type">TWITTER / X</span>
+                    <span class="channel-val">@PatelTirth12822</span>
+                  </div>
+                  <span class="channel-arrow">↗</span>
+                </a>
+
+                <!-- Phone / Direct Contact -->
+                <a href="tel:+919638636364" class="channel-link-card">
+                  <div class="channel-icon-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  </div>
+                  <div class="channel-text-info">
+                    <span class="channel-type">PHONE / WHATSAPP</span>
+                    <span class="channel-val">+91 96386 36364</span>
+                  </div>
+                  <span class="channel-arrow">↗</span>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/tirth_patel_2407?stkn=MzNubXlhcGc5eDUy" target="_blank" rel="noopener noreferrer" class="channel-link-card">
+                  <div class="channel-icon-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                  </div>
+                  <div class="channel-text-info">
+                    <span class="channel-type">INSTAGRAM</span>
+                    <span class="channel-val">@tirth_patel_2407</span>
+                  </div>
+                  <span class="channel-arrow">↗</span>
+                </a>
+              </div>
+
+              <!-- Quick Transmission Form -->
+              <div class="direct-transmission-box">
+                <div class="transmission-header">
+                  <span class="tx-title">DIRECT PACKET TRANSMISSION</span>
+                  <span class="tx-tag">STATUS: READY</span>
+                </div>
+
+                <form id="transmission-form" class="transmission-form">
+                  <div class="form-row-dual">
+                    <div class="form-group">
+                      <label for="tx-sender-name">IDENTIFIER / NAME</label>
+                      <input type="text" id="tx-sender-name" required placeholder="e.g. Alex Rivera" />
+                    </div>
+                    <div class="form-group">
+                      <label for="tx-sender-email">RETURN ADDRESS (EMAIL)</label>
+                      <input type="email" id="tx-sender-email" required placeholder="alex@company.com" />
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="tx-subject">PACKET TOPIC</label>
+                    <input type="text" id="tx-subject" required placeholder="e.g. Backend Role / Distributed Systems Project" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="tx-message">PAYLOAD MESSAGE</label>
+                    <textarea id="tx-message" rows="4" required placeholder="Detail your project requirements, engineering role, or collaboration idea..."></textarea>
+                  </div>
+
+                  <div class="form-submit-row">
+                    <button type="submit" id="tx-send-btn" class="btn-transmit">
+                      <span>TRANSMIT PACKET</span>
+                      <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    </button>
+                    <span id="tx-feedback-msg" class="tx-feedback-text"></span>
+                  </div>
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer reveal-item">
+      <div class="footer-inner">
+        <div class="footer-top-row">
+          <div class="footer-brand-bio">
+            <h3 class="footer-name">Tirth Patel</h3>
+            <p class="footer-role">Backend Engineer | Distributed Systems | Open Source Contributor</p>
+            <p class="footer-loc">Ahmedabad / Gandhinagar, Gujarat, India</p>
+          </div>
+
+          <div class="footer-social-pills">
+            <a href="mailto:tirthpatel622@gmail.com" class="footer-pill">Email</a>
+            <a href="https://github.com/Tirthdeveloper" target="_blank" rel="noopener noreferrer" class="footer-pill">GitHub</a>
+            <a href="http://www.linkedin.com/in/patel-tirth-421b9a34a" target="_blank" rel="noopener noreferrer" class="footer-pill">LinkedIn</a>
+            <a href="https://x.com/PatelTirth12822" target="_blank" rel="noopener noreferrer" class="footer-pill">Twitter / X</a>
+            <a href="tel:+919638636364" class="footer-pill">+91 96386 36364</a>
+            <a href="https://www.instagram.com/tirth_patel_2407?stkn=MzNubXlhcGc5eDUy" target="_blank" rel="noopener noreferrer" class="footer-pill">Instagram</a>
+          </div>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer Sitemap">
+          <a href="#hero">HOME</a>
+          <a href="#who-i-am">ABOUT</a>
+          <a href="#timeline">TIMELINE</a>
+          <a href="#tech-stack">TECH STACK</a>
+          <a href="#projects">PROJECTS</a>
+          <a href="#open-source">OPEN SOURCE</a>
+          <a href="#terminal">TERMINAL</a>
+          <a href="#contact">CONTACT</a>
+        </nav>
+
+        <div class="footer-bottom-row">
+          <span class="footer-copy">© 2026 Tirth Patel. All rights reserved.</span>
+          <div class="footer-links-cluster">
+            <button id="footer-resume-btn" class="footer-ghost-btn">RESUME</button>
+            <a href="#hero" class="footer-top-link">BACK TO TOP ↑</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- RESUME MODAL VIEWER -->
+  <div id="resume-modal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="resume-modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <span class="modal-badge">DOCUMENT // CV.PDF</span>
+          <h2 id="resume-modal-title" class="modal-title">Tirth Patel — Curriculum Vitae</h2>
+        </div>
+        <button id="close-resume-modal" class="modal-close-btn" aria-label="Close modal">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="resume-sheet">
+          <div class="cv-header">
+            <h1 class="cv-name">Tirth Patel</h1>
+            <p class="cv-subtitle">Data Analyst & Machine Learning Engineer | Python, SQL, Predictive AI & Power BI</p>
+            <div class="cv-contact-line">
+              <span>Ahmedabad, Gujarat, India</span> · 
+              <span>+91 96386 36364</span> · 
+              <a href="mailto:tirthpatel622@gmail.com">tirthpatel622@gmail.com</a> · 
+              <a href="https://github.com/Tirthdeveloper" target="_blank">github.com/Tirthdeveloper</a> · 
+              <a href="http://www.linkedin.com/in/patel-tirth-421b9a34a" target="_blank">linkedin.com/in/patel-tirth-421b9a34a</a>
+            </div>
+          </div>
+
+          <div class="cv-section">
+            <h3 class="cv-section-title">SUMMARY</h3>
+            <p class="cv-p">
+              B.Tech Computer Engineering student specializing in Data Analysis, Python, SQL, and Machine Learning. Experienced in end-to-end data cleaning, exploratory data analysis (EDA), statistical modeling, and building supervised learning models using Scikit-learn and XGBoost. Developed early warning disaster AI systems, interactive Power BI KPI dashboards, and optimized relational database schemas. Eager to contribute as a Data Analyst / Machine Learning Engineer and transform complex datasets into high-impact decisions.
+            </p>
+          </div>
+
+          <div class="cv-section">
+            <h3 class="cv-section-title">PROJECT EXPERIENCE</h3>
+            <div class="cv-item">
+              <div class="cv-item-header">
+                <strong>AI-Based Landslide Early Warning System (NER)</strong> — Python, XGBoost, YOLO, FastAPI, GIS
+                <span class="cv-item-date">2026 (SIH PS 26001)</span>
+              </div>
+              <ul class="cv-bullets">
+                <li>Built an early warning & risk monitoring ML engine for 8 North Eastern Region states utilizing NASA landslide catalogs, GSI data, and OpenWeather rainfall feeds.</li>
+                <li>Trained an XGBoost risk classification model achieving 94.6% prediction accuracy and integrated YOLO computer vision for road obstruction detection.</li>
+                <li>Deployed real-time GIS interactive heatmaps (Folium/Leaflet.js) and automated multi-channel emergency SMS alerts (<3s dispatch latency).</li>
+              </ul>
+            </div>
+
+            <div class="cv-item">
+              <div class="cv-item-header">
+                <strong>AQI Analysis & Pollutant Correlation Engine</strong> — Python, Pandas, Matplotlib, Seaborn
+                <span class="cv-item-date">2025</span>
+              </div>
+              <ul class="cv-bullets">
+                <li>Analysed 9,000+ air quality records to identify pollution trends, seasonal patterns, and key pollutant correlations (PM2.5, PM10, NO2).</li>
+                <li>Built statistical visualizations and correlation heatmaps for environmental monitoring and health risk assessment.</li>
+              </ul>
+            </div>
+
+            <div class="cv-item">
+              <div class="cv-item-header">
+                <strong>Hospital Clinical Management System</strong> — SQL, MySQL, Relational Schema
+                <span class="cv-item-date">2026</span>
+              </div>
+              <ul class="cv-bullets">
+                <li>Designed 3NF normalized schema across 5+ linked tables for patient admissions, doctor assignments, and billing.</li>
+                <li>Engineered complex SQL multi-table joins, aggregations, and subqueries executing clinical queries in under 40ms.</li>
+              </ul>
+            </div>
+
+            <div class="cv-item">
+              <div class="cv-item-header">
+                <strong>Crop Recommendation BI Dashboard</strong> — Power BI, Machine Learning, Data Analytics
+                <span class="cv-item-date">2025</span>
+              </div>
+              <ul class="cv-bullets">
+                <li>Engineered interactive Power BI reporting dashboard analyzing soil nutrients (N, P, K) and climate metrics for agricultural crop optimization.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="cv-section">
+            <h3 class="cv-section-title">EDUCATION & CERTIFICATIONS</h3>
+            <div class="cv-item">
+              <div class="cv-item-header">
+                <strong>B.Tech in Computer Science & Engineering</strong> — Gandhinagar Institute Of Technology
+                <span class="cv-item-date">2024 — 2028 (Expected)</span>
+              </div>
+            </div>
+            <div class="cv-item">
+              <div class="cv-item-header">
+                <strong>Higher Secondary Certificate — Science</strong> — Narayan Vidhyalay
+                <span class="cv-item-date">2024</span>
+              </div>
+            </div>
+            <div class="cv-item">
+              <div class="cv-item-header">
+                <strong>Advanced Training in Data Science & AI/ML</strong> — Red & White Skill Education
+                <span class="cv-item-date">Jul 2025 — Sep 2026</span>
+              </div>
+              <ul class="cv-bullets">
+                <li>20+ hands-on projects: Python, SQL, EDA, Statistical Analysis, Power BI, Supervised Machine Learning.</li>
+              </ul>
+            </div>
+            <div class="cv-item">
+              <div class="cv-item-header">
+                <strong>Certificate of Training Completion — Data Science</strong> — Acmegrade & IIT Delhi Rendezvous
+                <span class="cv-item-date">Sep 2025 — Oct 2025</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cv-section">
+            <h3 class="cv-section-title">TECHNICAL SKILLS</h3>
+            <p class="cv-p">
+              <strong>Programming & APIs:</strong> Python, SQL (MySQL), FastAPI, HTML5, CSS3, JavaScript<br>
+              <strong>Data Science & Analytics:</strong> Pandas, NumPy, Data Cleaning & Wrangling, EDA, Feature Engineering, Advanced Excel<br>
+              <strong>Machine Learning & AI:</strong> Scikit-learn, XGBoost, Regression & Classification, Computer Vision (YOLO), Model Evaluation<br>
+              <strong>Visualization, BI & GIS:</strong> Power BI, Matplotlib, Seaborn, Folium & Leaflet.js, MySQL, Git & GitHub, Jupyter Notebook, VS Code
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button id="download-cv-btn" class="btn-primary-glow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          <span>PRINT / SAVE RESUME</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="main.js"></script>
+</body>
+</html>
