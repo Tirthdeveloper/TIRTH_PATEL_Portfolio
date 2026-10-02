@@ -2647,12 +2647,49 @@ body.cursor-hover .custom-cursor-ring {
   font-size: 0.85rem;
 }
 
+.cv-git-link {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  background: rgba(10, 132, 255, 0.1);
+  border: 1px solid rgba(10, 132, 255, 0.25);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.cv-git-link:hover {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 0 12px rgba(10, 132, 255, 0.4);
+}
+
+.cv-tech-stack {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-300);
+  font-weight: 400;
+}
+
+.cv-inst {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--ink-300);
+  margin-top: 0.15rem;
+  margin-bottom: 0.35rem;
+}
+
 .modal-footer {
   padding: 1.25rem 2rem;
   background: var(--bg-ink-900);
   border-top: 1px solid var(--border-subtle);
   display: flex;
+  align-items: center;
   justify-content: flex-end;
+  gap: 0.85rem;
+  flex-wrap: wrap;
 }
 
 /* Toast Container */

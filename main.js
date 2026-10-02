@@ -829,6 +829,23 @@ function initResumeModal() {
     }
   });
 
+  const downloadPdfBtn = document.getElementById('download-pdf-btn');
+  const downloadDocxBtn = document.getElementById('download-docx-btn');
+
+  if (downloadPdfBtn) {
+    downloadPdfBtn.addEventListener('click', () => {
+      playTone(1200, 'sine', 0.1, 0.05);
+      showToast('Downloading Tirth_Patel_Resume_AIML.pdf...');
+    });
+  }
+
+  if (downloadDocxBtn) {
+    downloadDocxBtn.addEventListener('click', () => {
+      playTone(1050, 'triangle', 0.1, 0.05);
+      showToast('Downloading Tirth_Patel_Resume_AIML.docx...');
+    });
+  }
+
   if (downloadBtn) {
     downloadBtn.addEventListener('click', () => {
       playTone(1100, 'sine', 0.08, 0.04);
